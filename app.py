@@ -22,10 +22,11 @@ model, selected_features = load_model()
 # Load scaler
 @st.cache_resource
 def load_scaler():
-   df = pd.read_csv("https://drive.google.com/uc?export=download&id=1A5-9qfWlt3EWvjcoZwHOH_ZXrMFazy7D")
+    df = pd.read_csv("https://drive.google.com/uc?export=download&id=1A5-9qfWlt3EWvjcoZwHOH_ZXrMFazy7D")
     scaler = MinMaxScaler()
     scaler.fit(df[selected_features])
     return scaler
+
 
 scaler = load_scaler()
 
